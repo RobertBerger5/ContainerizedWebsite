@@ -1,0 +1,18 @@
+Starting Everything Up:
+    docker-compose up -d
+
+Restarting:
+    docker-compose down
+    (may also need to do docker image rm (whatever the mysql one is) because it tends to be problematic)
+
+Rebuilding Containers:
+    cd (directory)
+    docker build .
+
+Using MySQL:
+    docker exec -it dockerwebsite_mysql_1 mysql -uroot -p
+    (alternatively, just install mysql and have /var/lib/mysql point to ./database (untested))
+
+
+TODO:
+    Security - make a symbolic link to the keys: public & private, /etc/letsencrypt/{options-ssl-nginx,ssl-dhparams}
