@@ -1,6 +1,0 @@
-2019/12/23 21:55:14 [emerg] 1#1: a duplicate default server for 0.0.0.0:80 in /etc/nginx/sites-enabled/main:72
-2019/12/23 22:07:29 [emerg] 1#1: directive "server_name" is not terminated by ";" in /etc/nginx/conf.d/default.conf:44
-2019/12/23 22:12:33 [warn] 1#1: conflicting server name "localhost" on 0.0.0.0:80, ignored
-2019/12/23 22:27:44 [emerg] 1#1: open() "/etc/nginx/sites-enabled/main" failed (2: No such file or directory) in /etc/nginx/nginx.conf:63
-2019/12/23 22:38:27 [warn] 1#1: conflicting server name "localhost" on 0.0.0.0:80, ignored
-2019/12/24 01:57:09 [error] 7#7: *1 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 172.20.0.1, server: localhost, request: "POST /rate.php HTTP/1.1", upstream: "fastcgi://172.20.0.3:9000", host: "localhost:8080", referrer: "http://localhost:8080/"

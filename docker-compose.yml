@@ -1,10 +1,10 @@
 version: "3.2"
 services:
-  web:
+  nginx:
     image: nginx:latest
     ports:
-      #TODO: just map 80 to 80 and 443 to 443...
-      - "8080:443"
+      - "80:80"
+      - "443:443"
     volumes:
       - ./frontend:/frontend
       - ./nginxLogs/access.log:/var/log/nginx/access.log
@@ -14,18 +14,18 @@ services:
       - ./nginxConfFiles/sites-enabled:/etc/nginx/sites-enabled
       - ./nginxConfFiles/snippets/fastcgi-php.conf:/etc/nginx/snippets/fastcgi-php.conf
       - ./nginxConfFiles/fastcgi.conf:/etc/nginx/fastcgi.conf
-      - ./data/certbot/conf:/etc/letsencrypt
-      - ./data/certbot/www:/var/www/certbot
+#      - ./data/certbot/conf:/etc/letsencrypt
+#      - ./data/certbot/www:/var/www/certbot
     links:
       - php
     networks:
       - frontend
       - backend
-  certbot:
-    image: certbot/certbot
-    volumes:
-      - ./data/certbot/conf:/etc/letsencrypt
-      - ./data/certbot/www:/var/www/certbot
+#  certbot:
+#    image: certbot/certbot
+#    volumes:
+#      - ./data/certbot/conf:/etc/letsencrypt
+#      - ./data/certbot/www:/var/www/certbot
   php:
     build: ./php
     volumes:
