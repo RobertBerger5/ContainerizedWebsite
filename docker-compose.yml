@@ -7,8 +7,9 @@ services:
       - "443:443"
     volumes:
       - ./frontend:/frontend
-      - ./nginxLogs/access.log:/var/log/nginx/access.log
-      - ./nginxLogs/error.log:/var/log/nginx/error.log
+#      - ./nginxLogs/access.log:/var/log/nginx/access.log
+#      - ./nginxLogs/error.log:/var/log/nginx/error.log
+      - ./nginxLogs:/var/log/nginx
       - ./nginxConfFiles/nginx.conf:/etc/nginx/nginx.conf
       - ./nginxConfFiles/sites-available:/etc/nginx/sites-available
       - ./nginxConfFiles/sites-enabled:/etc/nginx/sites-enabled
